@@ -1,8 +1,18 @@
-import { DataSource } from 'typeorm'
-import dotenv from 'dotenv'
-import { entities } from './database/entities'
+import { DataSource } from 'typeorm';
+import dotenv from 'dotenv';
+import { entities } from './database/entities';
 
-dotenv.config()
+dotenv.config();
+
+const getDatabaseSSLFromEnv = () => {
+    if (process.env.DATABASE_SSL === 'true') {
+        return {
+            rejectUnauthorized: false,  // Optional: Allows self-signed certificates
+            sslmode: 'require',         // Ensures SSL is used
+        };
+    }
+    return undefined;
+};
 
 export const AppDataSource = new DataSource({
     type: 'postgres',
@@ -16,4 +26,5 @@ export const AppDataSource = new DataSource({
     entities: Object.values(entities),
     migrations: [],
     subscribers: [],
-})
+    ssl: getDatabaseSSLFromEnv(),  // Uses the sslmode configuration
+});

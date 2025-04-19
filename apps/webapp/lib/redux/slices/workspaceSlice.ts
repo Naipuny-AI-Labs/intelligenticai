@@ -115,7 +115,7 @@ const workspaceSlice = createSlice({
       })
       .addCase(fetchWorkspaceDetails.fulfilled, (state, action) => {
         state.isLoading = false
-        state.subscription = action.payload.subscription
+        state.subscription = action.payload.subscription as "trial" | "pro" | "enterprise"
         state.messagesUsed = action.payload.messagesUsed
         state.messageLimit = action.payload.messageLimit
         state.analytics = action.payload.analytics

@@ -3,34 +3,34 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 @Entity()
 export class User {
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    id!: string
 
     @Column()
-    usecase: string
+    usecase!: string
 
     @Column()
-    companysize: string
+    companysize!: string
 
     @Column()
-    industry: string
+    industry!: string
 
     @Column()
-    companyname: string
+    companyname!: string
 
     @Column()
-    name: string
+    name!: string
 
     @Column()
-    email: string
+    email!: string
 
     @Column()
-    designation: string
+    designation!: string
 
     @Column()
-    phone: string
+    phone!: string
 
     @Column({ type: 'text' })
-    requirements: string
+    requirements!: string
 
     @Column({ nullable: true })
     dataprivacy?: boolean
@@ -39,19 +39,19 @@ export class User {
     marketingconsent?: boolean
 
     @Column()
-    username: string
+    username!: string
 
     @Column()
-    password: string
+    password!: string
 
     @Column()
-    apikey: string
+    apikey!: string
 
     @Column({ type: 'timestamp' })
     @CreateDateColumn()
-    createdDate: Date
+    createdDate!: Date
 
     @Column({ type: 'timestamp' })
     @UpdateDateColumn()
-    updatedDate: Date
+    updatedDate!: Date
 }

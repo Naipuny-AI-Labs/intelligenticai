@@ -5,31 +5,31 @@ import { IAgent } from '../../Interface'
 @Entity()
 export class Agent implements IAgent {
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    id!: string
 
     @Column()
-    name: string
+    name!: string
 
     @Column()
-    description: string
+    description!: string
 
     @Column()
-    category: string
+    category!: string
 
     @Column('text', { array: true, nullable: true })
-    tags: string[]
+    tags!: string[]
 
     @Column()
-    pricing: string
+    pricing!: string
 
     @Column({ default: false })
-    featured: boolean
+    featured!: boolean
 
     @Column({ type: 'timestamp' })
     @CreateDateColumn()
-    createdDate: Date
+    createdDate!: Date
 
     @Column({ type: 'timestamp' })
     @UpdateDateColumn()
-    updatedDate: Date
+    updatedDate!: Date
 }

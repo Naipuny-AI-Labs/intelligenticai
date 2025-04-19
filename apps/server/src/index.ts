@@ -21,4 +21,7 @@ AppDataSource.initialize()
     })
     .catch((err) => {
         console.error('Error during Data Source initialization:', err)
+        if (err.message.includes('connection is insecure')) {
+            console.error('Please ensure DATABASE_SSL is set to "true" in your .env file')
+        }
     })

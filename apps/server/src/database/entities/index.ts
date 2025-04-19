@@ -2,7 +2,7 @@ import { Agent } from './Agent'
 import { OnBoardUser } from './OnBoardUser'
 import { User } from './User'
 
-export const entities = {
+export const entities: Record<string, any> = {
     Agent,
     OnBoardUser,
     User
