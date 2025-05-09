@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+bun.lockb
+
+# Dependency directories
+**/node_modules/
+**/bun.lockb
+
+# Build output
+**/.next/
+**/dist/
+**/.turbo/
+**/.bun/
+
+# Env files
+**/.env
+**/.env.local
+**/.env.*.local
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Docker artifacts
+*.pid
+*.tar
+docker-compose.override.yml
+
+# VSCode settings
+.vscode/
+
+# Ignore ECR credential helpers if any
+.aws/
